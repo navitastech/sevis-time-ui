@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title><%= title %></title>
+  <% include partials/head %>
+</head>
+<body>
+  <div class="">
+    <!-- Header -->
+    <% include partials/header %>
+    <!-- END Header -->
+    <div class="container">
+      <div class="row padding20lr">
+        <div class="col-lg-12">
+            <h3 id="employeeinfo-header">Give Kudos</h3>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6">
+          <div class="left padding10tb">
+              <img src="images/profile-big.png" alt="" />
+          </div>
+        </div>
+        <% if (msg == "error") { %>
+          <h3 id="employeeinfo-error" style="color:red;">Oops! There was a problem. Please try again later.</h3>
+        <% } %>
+        <div class="col-lg-9 col-md-9 col-sm-6">
+          <div class="form-data-holder">
+            <p>Employee: <%= reciever.firstName %> <%= reciever.lastName %></p>
+            <p>Department: <%= reciever.department %></p>
+          </div>
+        </div>
+        <div class="col-lg-9 col-md-9 col-sm-6">
+          <div class="form-data-holder">
+            <form method="post" action="/kudos-submit">
+              <p>What do you want to tell the employee?</p>
+              <p><textarea id="kudosText" name="kudosText" class="block" rows="3" cols="52"></textarea></p>
+              <p>Choose One</p>
+              <p><select id="kudosRating" name="kudosRating" class="block">
+                  <option value="0">Please Select One</option>
+                  <option value="5">Kind gesture (5 points)</option>
+                  <option value="10">Being helpful on a task (10 points)</option>
+                  <option value="25">Went above and beyond on a task (25 points)</option>
+                  <option value="50">Significant accomplishment (50 points)</option>
+                </select>
+              </p>
+              <p><input type="submit" id="kudosSubmitBtn" class="btn btn-lg" role="button" value="Submit"></p>
+              <input id="giverId" name="giverId" value="<%= giverId %>" type="hidden" />
+              <input id="recieverId" name="recieverId" value="<%= reciever.id %>" type="hidden" />
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- Footer -->
+      <% include partials/footer %>
+      <!-- END Footer  -->
+    </div> <!-- /container -->
+  </div>
+</body>
+</html>

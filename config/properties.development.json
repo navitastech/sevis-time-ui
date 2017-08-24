@@ -1,0 +1,5 @@
+{
+  "baseApiUrl" : "http://tomcat-app-ecs-elb-2111151572.us-east-1.elb.amazonaws.com/flash/",
+  "apiServerUrl" : "http://127.0.0.1:8080/api",
+  "weatherServerUrl":"http://api.openweathermap.org"
+}

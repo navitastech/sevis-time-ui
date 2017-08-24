@@ -1,0 +1,4 @@
+[2017-08-23 21:19:46.763] [INFO] app - Logger setup ok
+[2017-08-23 21:19:46.792] [INFO] app - Environment: local
+[2017-08-23 21:19:59.176] [DEBUG] app - Displaying the login page
+[2017-08-23 21:19:59.696] [DEBUG] app - Page not found: /favicon.ico

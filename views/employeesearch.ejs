@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title><%= title %></title>
+  <% include partials/head %>
+</head>
+<body>
+  <div class="">
+    <!-- Header -->
+    <% include partials/header %>
+    <!-- END Header -->
+    <div class="container">
+      <div class="row padding20lr">
+          <% if (!noMatch && !failure) { %>
+            <h3 id="employeeinfo-header">My Search Results</h3>
+            <div id="myResults">
+              <div class="padding20tb">
+                <table class="myResults hoverTable">
+                  <tr>
+                    <th></th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Department</th>
+                  </tr>
+                  <% results.forEach(function(employee) { %>
+                    <tr>
+                      <td class='clickable-row center' data-href='<%= employee.id %>'><img src="images/profile.png" alt="" /></td>
+                      <td class='clickable-row' data-href='<%= employee.id %>' ><%= employee.firstName %></td>
+                      <td class='clickable-row' data-href='<%= employee.id %>' ><%= employee.lastName %></td>
+                      <td class='clickable-row' data-href='<%= employee.id %>' ><%= employee.department %></td>
+                      <td class='clickable-row center' data-href='<%= employee.id %>' id="kudos"><input type="button" id="btnKudos" class="" role="button" value="Give Kudos"></td>
+                    </tr>
+                  <% }) %>
+                </table>
+              </div>
+            </div>
+          <% } %>
+          <% if (noMatch) { %>
+            <div id="noResults">
+              <div class="usa-alert usa-alert-info">
+               <div class="usa-alert-body">
+                 <h3 class="usa-alert-heading">No Results</h3>
+                 <p class="usa-alert-text">Sorry. We couldn't find any results for your searching criteria. Please try again.</p>
+               </div>
+              </div>
+            </div>
+          <% } %>
+          <% if (failure) { %>
+            <div id="otherError">
+                <div class="usa-alert usa-alert-error" role="alert">
+                 <div class="usa-alert-body">
+                   <h3 class="usa-alert-heading">Error Status</h3>
+                   <p class="usa-alert-text">Sorry. There was an error searching. Please try again later.</p>
+                 </div>
+               </div>
+            </div>
+          <% } %>
+      </div>
+      <!-- Footer -->
+      <% include partials/footer %>
+      <!-- END Footer  -->
+    </div> <!-- /container -->
+  </div>
+  <!--   -->
+  <script type="text/javascript">
+  jQuery(document).ready(function($) {
+    $(".clickable-row").click(function() {
+        if (this.id == "kudos") {
+            window.document.location = "/kudos?recievedId=" + $(this).data("href");
+        }
+        else {
+          window.document.location = "/employeelookup?employeeId=" + $(this).data("href");
+        }
+    });
+  });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= title %></title>
+  <% include partials/head %>
+</head>
+<body>
+
+<div class="containter-fluid">
+  <header class="gray-dark">
+    <div class="container">
+      <a href="/"><img src="images/logo.png" alt="Employee Time Management System" class="logo" /></a>
+    </div>
+  </header>
+  <div class="container">
+    <div class="myBg">
+        <div class="row center form-holder">
+            <div class="form-holder-bg">
+            <h3>Log in</h3>
+            <form method="post" action="loginsubmit">
+              <p class="left"><label for="username">Last name</label> <input type="text" id="username" name="username" class="block" autocomplete="off" required="" aria-required="true"></p>
+              <p class="left"><label for="password">First name</label> <input type="text" id="password" name="password" class="block" autocomplete="off" required="" aria-required="true"></p>
+              <% if (validationFail == true) { %>
+                  <p class="text-muted error">Your must enter both a first name and last name. Please try again.</p>
+              <% } %>
+              <% if (credentialsFail == true) { %>
+                  <p id="error" class="text-muted error">Your credentials are invalid. Please try again.</p>
+              <% } %>
+              <p><input type="submit" id="submitBtn" class="center" role="button" value="Submit"></p>
+            </form>
+        </div>
+    </div>
+  </div> <!-- /container -->
+  <!-- Footer -->
+  <% include partials/footer %>
+  <!-- END Footer  -->
+</div>
+</body>
+</html>

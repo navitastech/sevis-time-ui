@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="DHS-FLash">
+
+    <title><%= title %></title>
+
+    <!-- Bootstrap CSS -->
+    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+    <link href="/stylesheets/bootstrap-theme.min.css" rel="stylesheet">
+
+    <!-- JQuery CSS -->
+    <link href="/stylesheets/jquery-ui.min.css" rel="stylesheet">
+    <link href="/stylesheets/jquery-ui.theme.min.css" rel="stylesheet">
+
+    <!-- JQuery JS -->
+    <script src="/javascripts/jquery-2.2.3.min.js"></script>
+    <script src="/javascripts/jquery-ui.min.js"></script>
+
+    <!-- motd JS -->
+    <script src="/javascripts/core.js"></script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header clearfix">
+        <h3 class="text-muted">Please log in to continue...</h3>
+        <p>Username: <input type="text" id="username"></p>
+        <p>Password: <input type="text" id="password"></p>
+        <p><input type="button" id="submitBtn" class="btn btn-lg btn-success" role="button" value="Submit" onclick="alert('Not Active')"></p>
+    </div>
+
+    <div class="header clearfix">
+        <h3 class="text-muted">OR, See the current weather...</h3>
+        <form method="post" action="weather">
+          <p>Zip Code: <input type="text" id="zip" name="zip" value="20001"></p>
+          <p><input type="submit" id="weatherBtn" class="btn btn-lg btn-success" role="button" value="Submit"></p>
+        </form>
+    </div>
+
+
+    <footer class="footer">
+        <p>&copy; This is the footer disclaimer.</p>
+    </footer>
+
+</div> <!-- /container -->
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title><%= title %></title>
+  <% include partials/head %>
+</head>
+<body>
+  <div class="">
+    <!-- Header -->
+    <% include partials/header %>
+    <!-- END Header -->
+    <div class="container">
+      <div class="row padding20lr">
+        <div class="col-lg-12">
+          <% if (sameAsLoggedIn == true) { %>
+            <h3 id="employeeinfo-header">My Employee Information</h3>
+          <% } %>
+          <% if (msg == "thanks") { %>
+          <div class="usa-alert usa-alert-success" id="employeeinfo-header">
+            <div class="usa-alert-body">
+              <h3 class="usa-alert-heading">Thanks for sending Kudos!</h3>
+              <p class="usa-alert-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
+            </div>
+          </div>
+          <% } %>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6">
+          <div class="left padding10tb">
+              <img src="images/profile-big.png" alt="" />
+          </div>
+        </div>
+        <div class="col-lg-9 col-md-9 col-sm-6">
+          <div class="form-data-holder">
+            <p>First Name: <span id="employeeFirstName" class="inline-block" ><%= user.firstName %></span></p>
+            <p>Last Name:  <span type="text" id="employeeLastName" class="inline-block"><%= user.lastName %></span></p>
+            <p>Department: <span type="text" id="employeeDepartment" class="inline-block"><%= user.department %></span></p>
+          </div>
+
+          <!-- Form ready data -->
+          <!-- <div class="form-data-holder">
+            <p>First Name: <input type="text" id="employeeFirstName" class="block" value="<%= user.firstName %>" disabled> </p>
+            <p>Last Name:  <input type="text" id="employeeLastName" class="block" value="<%= user.lastName %>" disabled></p>
+            <p>Department: <input type="text" id="employeeDepartment" class="block" value="<%= user.department %>" disabled></p>
+          </div> -->
+        </div>
+
+
+      </div>
+      <!-- Footer -->
+      <% include partials/footer %>
+      <!-- END Footer  -->
+    </div> <!-- /container -->
+  </div>
+</body>
+</html>

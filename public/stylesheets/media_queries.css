@@ -1,0 +1,40 @@
+/*==========  Desktop First Method  ==========*/
+
+        /* Large Devices, Wide Screens */
+        @media only screen and (max-width : 1200px) {
+
+        }
+
+        /* Medium Devices, Desktops */
+        @media only screen and (max-width : 992px) {
+
+        }
+
+        /* Small Devices, Tablets */
+        @media only screen and (max-width : 768px) {
+
+        }
+
+        /* Extra Small Devices, Phones */
+        @media only screen and (max-width : 480px) {
+          .myBg {
+            background-image: none;
+          }
+
+          .form-holder-bg {
+            padding: 10px;
+            background-color: #FFF;
+          }
+
+          .w150 {
+            width: 100%;
+          }
+        }
+
+        /* Custom, iPhone Retina */
+        @media only screen and (max-width : 320px) {
+          .w200 {
+            width: 100%;
+            display: block;
+          }
+        }

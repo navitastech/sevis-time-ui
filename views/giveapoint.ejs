@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title><%= title %></title>
+  <% include partials/head %>
+</head>
+<body>
+  <div class="">
+    <!-- Header -->
+    <% include partials/header %>
+    <!-- END Header -->
+    <div class="container">
+      <div class="row padding20lr">
+        <% if (success === "true") { %>
+          <!-- Success Message -->
+          <div id="successMessage">
+            <div class="usa-alert usa-alert-success">
+              <div class="usa-alert-body">
+                <h3 class="usa-alert-heading">Thank you</h3>
+                <p class="usa-alert-text">User has been successfully added and been rewarded a point.</p>
+              </div>
+            </div>
+          </div>
+        <% } %>
+          <% if (success === "false") { %>
+              <!-- Error Message -->
+            <div id="errorMessage">
+              <div class="usa-alert usa-alert-error" role="alert">
+                <div class="usa-alert-body">
+                  <h3 class="usa-alert-heading">Error</h3>
+                  <p class="usa-alert-text">An error has occured.</p>
+                </div>
+              </div>
+            </div>
+            <% } %>
+        <div id="addNewUser">
+          <div class="padding20tb">
+            <table class="myResults hoverTable">
+              <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Give Points</th>
+              </tr>
+                <tr>
+                  <form method="post" action="/addUser">
+                  <td class="w200">
+                    <label for="firstName"><span class="block hidden">First name</span></label>
+                    <input type="text" id="firstName" name="firstName" placeholder="First Name" autocomplete="off" required="" aria-required="true"/></td>
+                  <td class="w200">
+                    <label for="lastName"><span class="block hidden">Last name</span></label>
+                    <input type="text" id="lastName" name="lastName" placeholder="Last Name" autocomplete="off" required="" aria-required="true" /></td>
+                  <td id="kudos">
+                    <div class="block valign-top">
+                      <div class="inline-block w300 valign-top">
+                        <label for="kudosText">Comment</label>
+                        <input id="kudosText" name="kudosText" class="block" rows="3" cols="52" placeholder="500 characters max" autocomplete="off" required="" aria-required="true"></input>
+                      </div>
+                      <div class="inline-block w250 valign-top">
+                        <label for="kudosRating">Please Select One</label>
+                         <select id="kudosRating" name="kudosRating" class="block" required="" aria-required="true" >
+                            <option value=""></option>
+                            <option value="Teamwork">Teamwork</option>
+                            <option value="Improvement">Improvement</option>
+                            <option value="Delivery">Delivery</option>
+                            <option value="Experiment">Experiment</option>
+                          </select>
+                      </div>
+                      <div class="inline-block w100 valign-top padding-top-50">
+                        <input type="submit" id="addUserSubmit" class="btn btn-lg" role="button" value="Submit">
+                      </div>
+                    </div>
+                  </td>
+                </form>
+                </tr>
+            </table>
+          </div>
+        </div>
+
+      </div>
+      <!-- Footer -->
+      <% include partials/footer %>
+      <!-- END Footer  -->
+    </div> <!-- /container -->
+  </div>
+</body>
+</html>
