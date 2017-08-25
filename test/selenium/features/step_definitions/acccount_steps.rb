@@ -2,8 +2,8 @@ require 'selenium-webdriver'
 $driver
 $wait
 # default URL. pass in a custom URL from the command line with: cucumber URL="[url to test on]"
-$baseUrl = "http://flashwebapplb-1223457194.us-east-1.elb.amazonaws.com/"
-
+# flash API $baseUrl = "http://flashwebapplb-1223457194.us-east-1.elb.amazonaws.com/"
+$baseURL = ""
 Given(/^the user is on the login screen$/) do
 
   # configure from command line

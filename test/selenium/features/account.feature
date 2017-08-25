@@ -44,3 +44,24 @@ Scenario: As a User, I want to add a new user and give them a point
   And the user chooses Teamwork from the dropdown
   And the user submits the Add User form
   Then the kudos success message is displayed and says User has been successfully added and been rewarded a point.
+
+# The tests below are from the ICE user stories - once the above tests work with
+# existing code, ensure any new functionality from the stories below are folded into the above tests
+#
+# As an employee/supervisor, I shall be able to register to timesheet application
+#
+#  1)	Given the User (employee / supervisor) is at the registration page
+#  When the User has provided login details - email address, password, first and last name and supervisor (yes/no) flag
+#  Then system shall allow registration of new employee/supervisor
+#  2)  Given user has successfully registered
+#  When the user data is persisted
+#  Then registration successful message is shown and user is taken to Timesheet application homepage (Timesheet application homepage has Menu options for enter timesheets, approve timesheet and reports)
+#
+#  As an employee, I should be able on the log-in page to timesheet application
+#
+#  1)	Given the User (employee/supervisor) is at the login page
+#  When user has supplied valid credentials
+#  Then the user is redirected to timesheet entry page
+#  2)	Given user is at the login page
+#  When the user provides incorrect credentials
+#  Then the user remains on the current page and a friendly  error message is displayed prompting the user to try again
