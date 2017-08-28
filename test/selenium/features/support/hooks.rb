@@ -1,6 +1,10 @@
+require 'selenium-webdriver'
 Before do |scenario|
-  $driver = Selenium::WebDriver.for :firefox
+  puts 'before hook'
+  $driver = Selenium::WebDriver.for :chrome
+
   $wait = Selenium::WebDriver::Wait.new(:timeout => 5) # seconds
+  puts 'end before hook'
 end
 
 After do |scenario|

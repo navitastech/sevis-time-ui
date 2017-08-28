@@ -24,7 +24,7 @@ $> selenium-standalone start --drivers.ie.arch=ia32
 ### Connection Information
 The selenium grid can be reached from the test suite at:
 ```
-http://nemselapp001:4444/wd/hub ?
+http://something:4444/wd/hub ?
 
 #### Browser Setup
 Install Firefox version 45.0: https://ftp.mozilla.org/pub/firefox/releases/45.0/ <br/>

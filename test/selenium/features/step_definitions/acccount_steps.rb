@@ -3,11 +3,11 @@ $driver
 $wait
 # default URL. pass in a custom URL from the command line with: cucumber URL="[url to test on]"
 # flash API $baseUrl = "http://flashwebapplb-1223457194.us-east-1.elb.amazonaws.com/"
-$baseURL = ""
+$baseUrl = "http://www.agiletrailblazers.com/"
 Given(/^the user is on the login screen$/) do
-
+  puts 'first step'
   # configure from command line
-  if ENV['URL'].to_s.length != 0
+  if (ENV['URL'] != '' && ENV['URL'] != nil)
     $baseUrl = ENV['URL']
   end
   $driver.navigate.to $baseUrl
